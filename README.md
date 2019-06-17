@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+My Blog
 
-Things you may want to cover:
+# Developer Notes
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## HTML to HAML conversion
+If you want to convert all of your .erb views into .haml, you can do so using the following command:
+```
+rails haml:erb2haml
+```

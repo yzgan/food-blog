@@ -1,0 +1,18 @@
+.carousel.slide.carousel-fade{"data-ride" => "carousel", id: "carousel-#{id}"}
+  %ol.carousel-indicators
+    - foods.each.with_index do |food, index|
+      %li{"data-slide-to" => index, "data-target" => "#carousel-#{id}", class: "#{'active' if index.zero?}"}
+  .carousel-inner
+    - foods.each.with_index do |food, index|
+      .carousel-item{ class: "#{'active' if index.zero?}" }
+        = image_tag(food.image, class: ['d-block'], width: '800', height: '450')
+        .carousel-caption.d-none.d-md-block.text-shadow
+          %h5= food.name
+          %p= food.description
+          %p recommended image size 800x450
+    %a.carousel-control-prev{"data-slide" => "prev", href: "#carousel-#{id}", role: "button"}
+      %span.carousel-control-prev-icon{"aria-hidden" => "true"}
+      %span.sr-only Previous
+    %a.carousel-control-next{"data-slide" => "next", href: "#carousel-#{id}", role: "button"}
+      %span.carousel-control-next-icon{"aria-hidden" => "true"}
+      %span.sr-only Next

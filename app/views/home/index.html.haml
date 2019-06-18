@@ -1,6 +1,6 @@
-%section.jumbotron.text-center.mb-0
+%section#home-panel.jumbotron.text-center.mb-0
   .container
-    %h1.jumbotron-heading My Personel Food Blog
+    %h1.display-2.jumbotron-heading My Personel Food Blog
     %p.lead.text-muted
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam est voluptas, dolore nam nemo illo ut sapiente vitae commodi magnam provident voluptatum architecto aspernatur animi modi numquam adipisci necessitatibus totam.
 %section.container-fluid
@@ -9,12 +9,37 @@
       .w-100
         - @recent_foods = Array.new.tap do |a|
           - a << OpenStruct.new(name: 'Grilled Meat Burger', description: 'selective focus photography of burger patty, mayonnaise, and French fries served on platter', image: 'food-1.jpeg')
-          - a << OpenStruct.new(name: 'Pizza', description: 'cripsy texture with juicy chicken meat... slurp', image: 'food-2.jpeg') 
-        = render 'carousel', id: 'recent', foods: @recent_foods
+          - a << OpenStruct.new(name: 'Pizza', description: 'cripsy texture with juicy chicken meat... slurp', image: 'food-2.jpeg')
+        = render 'carousel', id: 'recent', foods: @recent_foods if @recent_foods
     .col-6.px-0
       .w-100
         - @popular_foods = Array.new.tap do |a|
           - a << OpenStruct.new(name: 'Fried Rice Wrapper', description: 'Variety asian flavor ingredient burst in the mounth... oh yeah', image: 'food-3.jpeg')
           - a << OpenStruct.new(name: 'Veggie Wrapper', description: 'Healthy the way without losing taste', image: 'food-4') 
           - a << OpenStruct.new(name: 'Mix Fruits', description: 'For display only, not for eaten', image: 'food-5') 
-        = render 'carousel', id: 'popular', foods: @popular_foods
+        = render 'carousel', id: 'popular', foods: @popular_foods if @popular_foods
+%section.container.py-5
+  .card-deck
+    .card
+      = image_tag 'food-1', class: 'card-img-top', alt: 'sample food 1'
+      .card-body
+        %h5.card-title Card title
+        %p.card-text This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+      .card-footer
+        %small.text-muted Last updated 3 mins ago
+    .card
+      = image_tag 'food-1', class: 'card-img-top', alt: 'sample food 1'
+      .card-body
+        %h5.card-title Card title
+        %p.card-text This card has supporting text below as a natural lead-in to additional content.
+      .card-footer
+        %small.text-muted Last updated 3 mins ago
+    .card
+      = image_tag 'food-1', class: 'card-img-top', alt: 'sample food 1'
+      .card-body
+        %h5.card-title Card title
+        %p.card-text
+          This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod explicabo maiores accusamus provident pariatur, quas officia deserunt, illo repellendus iste molestias delectus, ea quasi doloribus enim. Error ut quidem earum!
+      .card-footer
+        %small.text-muted Last updated 3 mins ago

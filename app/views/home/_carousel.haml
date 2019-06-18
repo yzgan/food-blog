@@ -5,7 +5,7 @@
   .carousel-inner
     - foods.each.with_index do |food, index|
       .carousel-item{ class: "#{'active' if index.zero?}" }
-        = image_tag(food.image, class: ['d-block'], width: '800', height: '450')
+        = image_tag(food.image, class: ['d-block'], width: '800', height: '450', alt: food.name)
         .carousel-caption.d-none.d-md-block.text-shadow
           %h5= food.name
           %p= food.description

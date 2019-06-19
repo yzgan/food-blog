@@ -7,17 +7,10 @@
   .row
     .col-6.px-0
       .w-100
-        - @recent_foods = Array.new.tap do |a|
-          - a << OpenStruct.new(name: 'Grilled Meat Burger', description: 'selective focus photography of burger patty, mayonnaise, and French fries served on platter', image: 'food-1.jpeg')
-          - a << OpenStruct.new(name: 'Pizza', description: 'cripsy texture with juicy chicken meat... slurp', image: 'food-2.jpeg')
-        = render 'carousel', id: 'recent', foods: @recent_foods if @recent_foods
+        = render 'carousel', id: 'recent', foods: @recent_foods
     .col-6.px-0
       .w-100
-        - @popular_foods = Array.new.tap do |a|
-          - a << OpenStruct.new(name: 'Fried Rice Wrapper', description: 'Variety asian flavor ingredient burst in the mounth... oh yeah', image: 'food-3.jpeg')
-          - a << OpenStruct.new(name: 'Veggie Wrapper', description: 'Healthy the way without losing taste', image: 'food-4') 
-          - a << OpenStruct.new(name: 'Mix Fruits', description: 'For display only, not for eaten', image: 'food-5') 
-        = render 'carousel', id: 'popular', foods: @popular_foods if @popular_foods
+        = render 'carousel', id: 'popular', foods: @popular_foods
 %section.container.py-5
   .card-deck
     .card

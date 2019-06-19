@@ -1,12 +1,20 @@
+- sample_recent_foods = Array.new.tap do |a|
+  - a << OpenStruct.new(name: 'Grilled Meat Burger', description: 'selective focus photography of burger patty, mayonnaise, and French fries served on platter', image: 'food-1.jpeg')
+  - a << OpenStruct.new(name: 'Pizza', description: 'cripsy texture with juicy chicken meat... slurp', image: 'food-2.jpeg')
+- is_sample = foods.blank?
+- foods ||= sample_recent_foods
 .carousel.slide.carousel-fade{"data-ride" => "carousel", id: "carousel-#{id}"}
   %ol.carousel-indicators
     - foods.each.with_index do |food, index|
       %li{"data-slide-to" => index, "data-target" => "#carousel-#{id}", class: "#{'active' if index.zero?}"}
   .carousel-inner
+    
     - foods.each.with_index do |food, index|
       .carousel-item{ class: "#{'active' if index.zero?}" }
         = image_tag(food.image, class: ['d-block'], width: '800', height: '450', alt: food.name)
         .carousel-caption.d-none.d-md-block.text-shadow
+          - if is_sample
+            %span.badge.badge-pill.badge-primary Sample
           %h5= food.name
           %p= food.description
           %p recommended image size 800x450

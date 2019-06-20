@@ -1,10 +1,11 @@
 %nav.navbar.navbar-expand-lg.navbar-light.bg-light.py-3
-  %a.navbar-brand{:href => "/"}
+  %a.navbar-brand{href: '/'}
     %span.text-primary.p-3.mb-5.rounded.hover-transition
       %i.fas.fa-home
   %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
     %span.navbar-toggler-icon
   #navbarSupportedContent.collapse.navbar-collapse
     %ul.navbar-nav.mr-auto.d-block-inline
-      %li.nav-item.p-3.hover-transition     
-        = link_to content_tag(:i, nil, class: 'fas fa-newspaper'), articles_path
+      %a{href: articles_path}
+        %li.nav-item.p-3.hover-transition
+          %i.fas.fa-newspaper

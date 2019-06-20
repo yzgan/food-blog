@@ -1,13 +1,18 @@
-%nav.navbar.navbar-expand-lg.navbar-light.bg-light
-  %a.navbar-brand{:href => "#"} 🍲
+%nav.navbar.navbar-expand-lg.navbar-light.bg-light.py-3
+  %a.navbar-brand{:href => "/"}
+    %span.text-primary.p-3.mb-5.rounded
+      %i.fas.fa-home
   %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
     %span.navbar-toggler-icon
   #navbarSupportedContent.collapse.navbar-collapse
-    %ul.navbar-nav.mr-auto
-      %li.nav-item
-        %a.nav-link{:href => "#"}
-          Articles
-          %span.sr-only (current)
+    %ul.navbar-nav.mr-auto.d-block-inline
+      %li.nav-item.p-3        
+        = link_to content_tag(:i, nil, class: 'fas fa-newspaper'), articles_path
+
+        -# <i class="fas fa-newspaper"></i>
+        -# %a.nav-link{:href => "#"}
+        -#   Articles
+        -#   %span.sr-only (current)
       -# %li.nav-item
       -#   %a.nav-link{:href => "#"} Link
       -# %li.nav-item.dropdown

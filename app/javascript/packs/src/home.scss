@@ -1,22 +1,19 @@
-#home-panel.jumbotron {
-  padding-top: 8rem;
-  padding-bottom: 8rem;
-  margin-bottom: 0;
-  p:last-child {
-    margin-bottom: 0;
-  }
-  .jumbotron-heading {
-    font-weight: 300;
-  }
-  // .container {
-  //   max-width: 40rem;
-  // }
-}
 
-@media (min-width: 768px) {
-  .jumbotron {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
+#homepage {
+  #home-panel.jumbotron {
+    margin-bottom: 0;
+    p:last-child {
+      margin-bottom: 0;
+    }
+    .jumbotron-heading {
+      font-weight: 300;
+    }
+    @media (min-width: 768px) {
+      .jumbotron {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+      }
+    }
   }
 }
 
@@ -30,4 +27,9 @@
   &:hover {
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
   }
+}
+
+a:hover {
+  color: #007bff;
+  text-decoration: inherit;
 }

@@ -1,5 +1,5 @@
 %nav.navbar.navbar-expand-lg.navbar-light.bg-light.py-3
-  %a.navbar-brand{href: '/'}
+  %a.navbar-brand{href: '/', data: { toggle: 'tooltip', placement: 'right', title: 'Home'}}
     %span.text-primary.p-3.mb-5.rounded.hover-transition
       %i.fas.fa-home
   %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", :type => "button"}
@@ -7,5 +7,6 @@
   #navbarSupportedContent.collapse.navbar-collapse
     %ul.navbar-nav.mr-auto.d-block-inline
       %a{href: articles_path}
-        %li.nav-item.p-3.hover-transition
-          %i.fas.fa-newspaper
+        %li.nav-item.py-3.my-1
+          %span.text-primary.p-3.mb-5.rounded.hover-transition{data: { toggle: 'tooltip', placement: 'right', title: 'Articles'}}
+            %i.fas.fa-newspaper

@@ -18,5 +18,11 @@
 = simple_form_for @article do |f|
   = f.input :name
   = f.input :content, as: :rich_text_area, input_html: { style: "height: auto;" }
-  = f.input :images, as: :file, input_html: { multiple: true }
+  -# = f.input :images, as: :file, input_html: { multiple: true }
+  %h3 Images
+  #images
+    = f.simple_fields_for :images do |image|
+      = render 'image_fields', f: image
+    .links
+      = link_to_add_association 'add image', f, :images
   = f.submit 'Save', class: 'btn btn-primary'

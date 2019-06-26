@@ -7,6 +7,13 @@
   %b Content:
   = @article.content
 
+%div
+  %b Images
+  %ul
+    - if @article.images.attached?
+      - @article.images.each do |image| 
+        %li= image_tag image.variant(resize_to_limit: [200, 200])
+
 = link_to 'Edit', edit_article_path(@article)
 \|
 = link_to 'Back', articles_path

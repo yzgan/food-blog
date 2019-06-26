@@ -16,26 +16,12 @@
           = render 'carousel', id: 'popular', foods: @popular_foods
   %section.container.py-5
     .card-deck
-      .card
-        = image_tag 'food-1', class: 'card-img-top', alt: 'sample food 1'
-        .card-body
-          %h5.card-title Card title
-          %p.card-text This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-        .card-footer
-          %small.text-muted Last updated 3 mins ago
-      .card
-        = image_tag 'food-1', class: 'card-img-top', alt: 'sample food 1'
-        .card-body
-          %h5.card-title Card title
-          %p.card-text This card has supporting text below as a natural lead-in to additional content.
-        .card-footer
-          %small.text-muted Last updated 3 mins ago
-      .card
-        = image_tag 'food-1', class: 'card-img-top', alt: 'sample food 1'
-        .card-body
-          %h5.card-title Card title
-          %p.card-text
-            This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod explicabo maiores accusamus provident pariatur, quas officia deserunt, illo repellendus iste molestias delectus, ea quasi doloribus enim. Error ut quidem earum!
-        .card-footer
-          %small.text-muted Last updated 3 mins ago
+      - @articles.each do |article|
+        .card
+          - if article.images.present?
+            = image_tag article.images.sample.file , class: 'card-img-top', alt: article.name
+          .card-body
+            %h2.card-title= article.name
+            %p.card-text= article.content
+          .card-footer
+            %small.text-muted Last updated 3 mins ago

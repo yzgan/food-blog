@@ -1,0 +1,7 @@
+.nested-fields
+  .image
+    - if f.object.file.attached?
+      = image_tag f.object.file.variant(resize_to_limit: [200, 200])
+  = f.input :name
+  = f.input :file, as: :file
+  = link_to_remove_association "remove image", f

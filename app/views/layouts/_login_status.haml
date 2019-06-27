@@ -1,0 +1,13 @@
+- if user_signed_in?
+  = link_to destroy_user_session_path, method: :delete, data: {confirm: 'Sign out user?'} do
+    %div
+      .custom-control.custom-switch
+        %input{type: 'checkbox', class: 'custom-control-input', id: 'loginStatusSwitch', checked: user_signed_in?, disabled: true}
+        %label{for: 'loginStatusSwitch', class: 'custom-control-label'}
+          = current_user.email
+- else
+  = link_to new_user_session_path do
+    %div
+      .custom-control.custom-switch
+        %input{type: 'checkbox', class: 'custom-control-input', id: 'loginStatusSwitch', checked: user_signed_in?, disabled: true}
+        %label{for: 'loginStatusSwitch', class: 'custom-control-label'}

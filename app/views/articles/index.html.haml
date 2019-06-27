@@ -1,8 +1,8 @@
 .container.py-5
   %h1 Listing articles
 
-  %table
-    %thead
+  %table.table
+    %thead.thead-dark
       %tr
         %th Name
         %th Content
@@ -14,7 +14,7 @@
       - @articles.each do |article|
         %tr
           %td= article.name
-          %td= article.content
+          %td= article.content.to_plain_text.truncate(200)
           %td= link_to 'Show', article
           %td= link_to 'Edit', edit_article_path(article)
           %td= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' }

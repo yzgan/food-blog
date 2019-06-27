@@ -12,6 +12,7 @@
     %main
       %header
         = render 'layouts/navbar'
+        = render 'layouts/notification' if flash.present?
       = yield
   %footer.container.py-5
     %p

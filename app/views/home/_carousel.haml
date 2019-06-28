@@ -3,12 +3,11 @@
   - a << OpenStruct.new(name: 'Pizza', description: 'cripsy texture with juicy chicken meat... slurp', image: 'food-2.jpeg')
 - is_sample = foods.blank?
 - foods ||= sample_recent_foods
-.carousel.slide.carousel-fade{"data-ride" => "carousel", id: "carousel-#{id}"}
+.carousel.slide.carousel-fade.image-hover{"data-ride" => "carousel", id: "carousel-#{id}"}
   %ol.carousel-indicators
     - foods.each.with_index do |food, index|
       %li{"data-slide-to" => index, "data-target" => "#carousel-#{id}", class: "#{'active' if index.zero?}"}
   .carousel-inner
-    
     - foods.each.with_index do |food, index|
       .carousel-item{ class: "#{'active' if index.zero?}" }
         = image_tag(food.image, class: ['d-block'], width: '800', height: '450', alt: food.name)

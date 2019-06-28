@@ -1,6 +1,7 @@
-# README
-
 My Blog
+
+# Preview
+![screenshot](screenshot.png)
 
 # Developer Notes
 

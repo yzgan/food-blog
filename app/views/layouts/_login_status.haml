@@ -1,0 +1,17 @@
+-# - if user_signed_in?
+-#   = link_to destroy_user_session_path, method: :delete, data: { confirm: 'Sign out user?' } do
+-#     .custom-control.custom-switch
+-#       %input{type: 'checkbox', class: 'custom-control-input', id: 'loginStatusSwitch', checked: user_signed_in?, disabled: true}
+-#       %label{for: 'loginStatusSwitch', class: 'custom-control-label'}
+-#         = current_user.email
+-# - else
+-#   = link_to new_user_session_path do
+-#     .custom-control.custom-switch
+-#       %input{type: 'checkbox', class: 'custom-control-input', id: 'loginStatusSwitch', checked: user_signed_in?, disabled: true}
+-#       %label{for: 'loginStatusSwitch', class: 'custom-control-label'}
+
+= link_to user_signed_in? ? destroy_user_session_path : new_user_session_path,  method: user_signed_in? ? :delete : nil, data: user_signed_in? ? { confirm: 'Sign out user?' } : nil do
+  .custom-control.custom-switch
+    %input{type: 'checkbox', class: 'custom-control-input', id: 'loginStatusSwitch', checked: user_signed_in?, disabled: true}
+    %label{for: 'loginStatusSwitch', class: "custom-control-label"}
+      = user_signed_in? ? current_user.email : 'click to login'

@@ -12,7 +12,9 @@
     %main
       %header
         = render 'layouts/navbar'
-      = yield
+        = render 'layouts/notification' if flash.present?
+      .container.py-5
+        = yield
   %footer.container.py-5
     %p
       © 2019 Personel Food Blog

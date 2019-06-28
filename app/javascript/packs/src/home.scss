@@ -34,3 +34,18 @@ a:hover {
   color: #007bff;
   text-decoration: inherit;
 }
+
+.image-hover {
+  img {
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    -webkit-transition: width 2s; /* Safari prior 6.1 */
+    filter: grayscale(100%);
+    transition: filter 1s;
+  }
+  &:hover {
+    img {
+      -webkit-filter: none;
+      filter: none;
+    }
+  }
+}

@@ -1,24 +1,23 @@
-.container.py-5
-  %h1 Listing articles
+%h1 Listing articles
 
-  %table.table
-    %thead.thead-dark
+%table.table
+  %thead.thead-dark
+    %tr
+      %th Name
+      %th Content
+      %th
+      %th
+      %th
+
+  %tbody
+    - @articles.each do |article|
       %tr
-        %th Name
-        %th Content
-        %th
-        %th
-        %th
+        %td= article.name
+        %td= article.content.to_plain_text.truncate(200)
+        %td= link_to 'Show', article
+        %td= link_to 'Edit', edit_article_path(article)
+        %td= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' }
 
-    %tbody
-      - @articles.each do |article|
-        %tr
-          %td= article.name
-          %td= article.content.to_plain_text.truncate(200)
-          %td= link_to 'Show', article
-          %td= link_to 'Edit', edit_article_path(article)
-          %td= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' }
+%br
 
-  %br
-
-  = link_to 'New Article', new_article_path
+= link_to 'New Article', new_article_path

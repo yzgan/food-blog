@@ -14,4 +14,4 @@
   .custom-control.custom-switch
     %input{type: 'checkbox', class: 'custom-control-input', id: 'loginStatusSwitch', checked: user_signed_in?, disabled: true}
     %label{for: 'loginStatusSwitch', class: "custom-control-label"}
-      = user_signed_in? ? current_user.email : nil
+      = user_signed_in? ? current_user.email : 'click to login'

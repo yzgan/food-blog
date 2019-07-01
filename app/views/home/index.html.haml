@@ -17,12 +17,4 @@
           = render 'carousel', id: 'popular', foods: @popular_foods
   %section.container.py-5
     .card-deck
-      - @articles.each do |article|
-        .card
-          - if article.images.present?
-            = image_tag article.images.sample.file , class: 'card-img-top', alt: article.name
-          .card-body
-            %h2.card-title= article.name
-            %p.card-text= article.content
-          .card-footer
-            %small.text-muted Last updated 3 mins ago
+      = render partial: 'article', collection: @articles

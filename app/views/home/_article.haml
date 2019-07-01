@@ -1,0 +1,8 @@
+.card
+  - if article.images.present?
+    = image_tag article.images.sample.file , class: 'card-img-top', alt: article.name
+  .card-body
+    %h2.card-title= article.name
+    %p.card-text= article.content
+  .card-footer
+    %small.text-muted Last updated 3 mins ago

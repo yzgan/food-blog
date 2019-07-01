@@ -5,4 +5,8 @@
     %h2.card-title= article.name
     %p.card-text= article.content
   .card-footer
-    %small.text-muted Last updated 3 mins ago
+    .row
+      .col-12
+        %p
+          %small.text-muted Created at #{article.created_at.to_formatted_s(:long)}
+          %small.text-muted by #{article.user.email}

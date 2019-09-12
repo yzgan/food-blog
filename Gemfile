@@ -28,7 +28,7 @@ gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'cocoon'
-gem "devise", "~> 4.6"
+gem "devise", "~> 4.7"
 gem 'haml'
 gem 'haml-rails'
 gem 'image_processing', '~> 1.2'

@@ -31,7 +31,7 @@ gem 'cocoon'
 gem "devise", "~> 4.7"
 gem 'haml'
 gem 'haml-rails'
-gem 'image_processing', '~> 1.2'
+gem 'image_processing', '~> 1.12'
 gem 'simple_form'
 
 group :development, :test do
